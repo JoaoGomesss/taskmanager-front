@@ -1,0 +1,15 @@
+$background: linear-gradient(259.93deg, #000000 -41.68%, #003c50 146.85%);
+$primary-text-color: #eee;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background: $background;
+    color: $primary-text-color;
+}
