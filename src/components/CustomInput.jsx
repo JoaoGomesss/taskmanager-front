@@ -7,6 +7,7 @@ const CustomInput = ({ label, value, handleTaskAddition }) => {
                 type="text"
                 className="custom-input"
                 onChange={(e) => handleTaskAddition(e)}
+                value={value}
             />
 
             {label ? (
