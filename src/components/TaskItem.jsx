@@ -1,7 +1,25 @@
-import "./TaskItem.scss";
+import axios from "axios";
 import { FaTrashCan } from "react-icons/fa6";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import "./TaskItem.scss";
+
+const notify = () => {
+    toast.success("Tarefa apagada com sucesso!");
+};
 
 const TaskItem = ({ task }) => {
+    const handleTaskDeletion = async () => {
+        try {
+            await axios.delete(
+                `https://taskmanager-vq5u.onrender.com/tasks/${task._id}`
+            );
+            notify();
+            return;
+        } catch (error) {}
+    };
+
     return (
         <div className="task-item-container">
             <div className="task-description">
@@ -24,7 +42,11 @@ const TaskItem = ({ task }) => {
                 </label>
             </div>
             <div className="delete">
-                <FaTrashCan size={15} color="red" />
+                <FaTrashCan
+                    size={15}
+                    color="red"
+                    onClick={handleTaskDeletion}
+                />
             </div>
         </div>
     );
