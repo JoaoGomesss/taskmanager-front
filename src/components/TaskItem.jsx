@@ -29,6 +29,24 @@ const TaskItem = ({ task, fetchTasks }) => {
         }
     };
 
+    const handleTaskCompletionChange = async (e) => {
+        try {
+            await axios.patch(
+                `https://taskmanager-vq5u.onrender.com/tasks/${task._id}`,
+                {
+                    isCompleted: e.target.checked,
+                }
+            );
+
+            await fetchTasks();
+
+            notify("Tarefa concluída!", "success");
+            return;
+        } catch (error) {
+            toast.error("Erro ao concluir tarefa", "error");
+        }
+    };
+
     return (
         <div className="task-item-container">
             <div className="task-description">
@@ -40,7 +58,11 @@ const TaskItem = ({ task, fetchTasks }) => {
                     }
                 >
                     {task.description}
-                    <input type="checkbox" defaultChecked={task.isCompleted} />
+                    <input
+                        type="checkbox"
+                        defaultChecked={task.isCompleted}
+                        onChange={(e) => handleTaskCompletionChange(e)}
+                    />
                     <span
                         className={
                             task.isCompleted

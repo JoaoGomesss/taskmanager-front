@@ -16,14 +16,17 @@ const AddTask = ({ fetchTasks }) => {
         setTask(e.target.value);
     };
 
-    const notify = () => {
-        toast.error("Descrição da tarefa é necessária!");
+    const notify = (message, type) => {
+        if (type === "success") {
+            toast.success(message);
+        } else if (type === "error") {
+            toast.error(message);
+        }
     };
-
     const handleAddTaskToDatabase = async () => {
         try {
             if (task.length === 0) {
-                notify();
+                notify("Descrição da tarefa é necessária", "error");
                 return;
             }
 
@@ -35,8 +38,9 @@ const AddTask = ({ fetchTasks }) => {
             await fetchTasks();
 
             setTask("");
+            notify("Tarefa adicionada com sucesso", "success");
         } catch (error) {
-            console.log("Aldo deu errado");
+            console.log("Algo deu errado");
         }
     };
 
