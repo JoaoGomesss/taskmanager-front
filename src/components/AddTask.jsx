@@ -9,7 +9,7 @@ import CustomButton from "./CustomButton";
 
 import "./AddTask.scss";
 
-const AddTask = () => {
+const AddTask = ({ fetchTasks }) => {
     const [task, setTask] = useState("");
 
     const handleTaskAddition = (e) => {
@@ -31,7 +31,13 @@ const AddTask = () => {
                 description: task,
                 isCompleted: false,
             });
-        } catch (error) {}
+
+            await fetchTasks();
+
+            setTask("");
+        } catch (error) {
+            console.log("Aldo deu errado");
+        }
     };
 
     return (
