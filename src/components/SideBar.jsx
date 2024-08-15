@@ -7,7 +7,7 @@ const SideBar = () => {
     return (
         <div className="sidebar-container">
             <div className="logo">
-                <img src={logo} alt="DevJow Logo" />
+                <img src={logo} alt="DevJow Logo" width={120} />
             </div>
             <CustomButton>Sair</CustomButton>
         </div>
