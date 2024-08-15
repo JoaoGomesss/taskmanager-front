@@ -5,19 +5,28 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "./TaskItem.scss";
 
-const notify = () => {
-    toast.success("Tarefa apagada com sucesso!");
+const notify = (message, type) => {
+    if (type === "success") {
+        toast.success(message);
+    } else if (type === "error") {
+        toast.error(message);
+    }
 };
 
-const TaskItem = ({ task }) => {
+const TaskItem = ({ task, fetchTasks }) => {
     const handleTaskDeletion = async () => {
         try {
             await axios.delete(
                 `https://taskmanager-vq5u.onrender.com/tasks/${task._id}`
             );
-            notify();
+
+            await fetchTasks();
+
+            notify("Tarefa apagada com sucesso", "success");
             return;
-        } catch (error) {}
+        } catch (error) {
+            toast.error("Erro ao apagar mensagem", "error");
+        }
     };
 
     return (
