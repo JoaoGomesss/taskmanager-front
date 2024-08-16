@@ -79,7 +79,7 @@ const TaskItem = ({ task, fetchTasks }) => {
             <div className="delete">
                 <FaTrashCan
                     size={15}
-                    color="red"
+                    color="#ff5e1ed8"
                     onClick={handleTaskDeletion}
                 />
             </div>
