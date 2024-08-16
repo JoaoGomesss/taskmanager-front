@@ -2,16 +2,29 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./index.scss";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import HomeTasks from "./pages/HomeTasks";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <App />,
+    },
+    {
+        path: "/dashboard",
+        element: <HomeTasks />,
+    },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <App />
+        <RouterProvider router={router} />
         <ToastContainer />
     </React.StrictMode>
 );
