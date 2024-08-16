@@ -22,7 +22,7 @@ const TaskItem = ({ task, fetchTasks }) => {
 
             await fetchTasks();
 
-            notify("Tarefa apagada com sucesso", "success");
+            notify("Tarefa apagada com sucesso!", "success");
             return;
         } catch (_error) {
             toast.error("Erro ao apagar mensagem", "error");
@@ -42,7 +42,7 @@ const TaskItem = ({ task, fetchTasks }) => {
             await fetchTasks();
             const message = isCompleted
                 ? "Tarefa concluída!"
-                : "Tarefa desmarcada";
+                : "Tarefa desmarcada!";
             notify(message, "success");
 
             return;

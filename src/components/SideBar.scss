@@ -10,9 +10,11 @@
         color: #eee;
     }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    & {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
     .sign-out {
         position: absolute;
@@ -21,6 +23,7 @@
         width: 100%;
         color: black;
     }
+
     @media (max-width: 768px) {
         display: none;
     }

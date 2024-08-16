@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import axios from "axios";
 
 import "./Tasks.scss";
@@ -8,7 +8,7 @@ import AddTask from "./AddTask";
 const Task = () => {
     const [tasks, setTasks] = useState([]);
 
-    const fetchTasks = async () => {
+    const fetchTasks = useCallback(async () => {
         try {
             const { data } = await axios.get(
                 "https://taskmanager-vq5u.onrender.com/tasks"
@@ -17,7 +17,7 @@ const Task = () => {
         } catch (error) {
             console.log(error);
         }
-    };
+    }, []);
 
     const lastTasks = useMemo(() => {
         return tasks.filter((task) => task.isCompleted === false);
@@ -29,7 +29,7 @@ const Task = () => {
 
     useEffect(() => {
         fetchTasks();
-    }, []);
+    }, [fetchTasks]);
 
     return (
         <div className="tasks-container">

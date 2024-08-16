@@ -26,7 +26,7 @@ const AddTask = ({ fetchTasks }) => {
     const handleAddTaskToDatabase = async () => {
         try {
             if (task.length === 0) {
-                notify("Descrição da tarefa é necessária", "error");
+                notify("Descrição da tarefa é necessária!", "error");
                 return;
             }
 
@@ -38,7 +38,7 @@ const AddTask = ({ fetchTasks }) => {
             await fetchTasks();
 
             setTask("");
-            notify("Tarefa adicionada com sucesso", "success");
+            notify("Tarefa adicionada com sucesso!", "success");
         } catch (_error) {
             console.log("Algo deu errado");
         }
