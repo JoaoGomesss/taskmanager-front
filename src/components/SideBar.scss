@@ -5,6 +5,11 @@
     padding: 56px 28px;
     position: relative;
 
+    .links {
+        text-decoration: none;
+        color: #eee;
+    }
+
     @media (max-width: 768px) {
         display: none;
     }
