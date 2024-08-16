@@ -30,17 +30,21 @@ const TaskItem = ({ task, fetchTasks }) => {
     };
 
     const handleTaskCompletionChange = async (e) => {
+        const isCompleted = e.target.checked;
         try {
             await axios.patch(
                 `https://taskmanager-vq5u.onrender.com/tasks/${task._id}`,
                 {
-                    isCompleted: e.target.checked,
+                    isCompleted: isCompleted,
                 }
             );
 
             await fetchTasks();
+            const message = isCompleted
+                ? "Tarefa concluída!"
+                : "Tarefa desmarcada";
+            notify(message, "success");
 
-            notify("Tarefa concluída!", "success");
             return;
         } catch (_error) {
             toast.error("Erro ao concluir tarefa", "error");
