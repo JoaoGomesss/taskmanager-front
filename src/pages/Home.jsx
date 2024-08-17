@@ -7,7 +7,9 @@ import "./Home.scss";
 const Home = () => {
     return (
         <div className="home-container">
-            <img src={logo} alt="DevJow Logo" />
+            <Link to="https://portfolio-bzs.pages.dev/">
+                <img src={logo} alt="DevJow Logo" />
+            </Link>
             <div className="button-container">
                 <Link to="/dashboard" className="links">
                     <CustomButton>Entrar</CustomButton>
