@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Task Manager Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bem-vindo ao repositório do **Task Manager Frontend**! Este projeto é a interface de usuário para o sistema de gerenciamento de tarefas, desenvolvido com **React** e **SCSS**. Ele oferece uma experiência interativa e responsiva para criar, visualizar, atualizar e excluir tarefas.
 
-## Available Scripts
+![taskmanager_page-0001](https://github.com/user-attachments/assets/ba00820b-a6c6-425b-b60d-0fd3ab27eb64)
 
-In the project directory, you can run:
+## 📝 Descrição
 
-### `npm start`
+O **Task Manager Frontend** é um aplicativo web desenvolvido com **Create React App**, projetado para interagir com o backend do sistema de gerenciamento de tarefas. Ele fornece uma interface simples e intuitiva para os usuários gerenciarem suas tarefas.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Tecnologias Utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React** (com Create React App)
+- **SCSS** (para estilização)
+- **JavaScript** (lógica e interação)
+- **ESLint** e **Prettier** (para padronização de código)
+- **Husky** (para hooks de pré-commit)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🌐 Demonstração
 
-### `npm run build`
+No momento, o frontend pode ser configurado localmente para interagir com o backend. Certifique-se de que o backend do Task Manager está em execução antes de usar o frontend.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Configuração do Ambiente de Desenvolvimento
 
-### `npm run eject`
+Siga os passos abaixo para configurar e executar o projeto em sua máquina local.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Pré-requisitos
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Certifique-se de que você possui as ferramentas abaixo instaladas:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Node.js** (versão 18 ou superior)
+- Um gerenciador de pacotes, como **npm** ou **yarn**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Passo 1: Clonar o Repositório
 
-## Learn More
+Clone este repositório para o seu ambiente local:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+git clone https://github.com/JoaoGomesss/taskmanager-front.git
+cd taskmanager-front
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Passo 2: Instalar Dependências
+Instale as dependências do projeto utilizando npm ou yarn:
 
-### Code Splitting
+npm install
+# ou
+yarn install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Passo 3: Configurar Variáveis de Ambiente
+Se necessário, configure variáveis de ambiente para apontar para o backend. Crie um arquivo .env na raiz do projeto e configure a URL da API:
 
-### Analyzing the Bundle Size
+REACT_APP_API_URL=http://localhost:5000
+Certifique-se de que a URL corresponde ao endereço onde o backend do Task Manager está sendo executado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Passo 4: Executar a Aplicação
+Inicie o servidor de desenvolvimento com o comando:
 
-### Making a Progressive Web App
+npm start
+# ou
+yarn start
+A aplicação estará disponível em http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+📦 Scripts Disponíveis
+No diretório do projeto, você pode executar os seguintes scripts:
 
-### Advanced Configuration
+npm start
+Roda o aplicativo em modo de desenvolvimento. Abra http://localhost:3000 para visualizá-lo no navegador.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm test
+Inicia o runner de testes no modo interativo.
 
-### Deployment
+npm run build
+Compila o aplicativo para produção na pasta build. Ele otimiza o React para o melhor desempenho.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+npm run eject
+Remove a dependência única de construção. Atenção: essa operação é irreversível.
 
-### `npm run build` fails to minify
+📚 Estrutura do Projeto
+A estrutura do projeto é organizada da seguinte forma:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+taskmanager-front/
+├── .husky/               # Hooks do Git configurados pelo Husky
+├── public/               # Arquivos públicos (favicon, index.html, etc.)
+├── src/                  # Código-fonte principal
+│   ├── components/       # Componentes reutilizáveis
+│   ├── pages/            # Páginas do aplicativo
+│   ├── styles/           # Estilos globais e SCSS
+│   ├── utils/            # Funções utilitárias
+│   ├── App.js            # Componente principal
+│   ├── index.js          # Arquivo de entrada
+├── .gitignore            # Arquivos e pastas ignorados pelo Git
+├── .lintstagedrc.json    # Configuração do lint-staged
+├── .prettierrc           # Configuração do Prettier
+├── eslint.config.mjs     # Configuração do ESLint
+├── package.json          # Configuração de dependências e scripts do projeto
+└── README.md             # Documentação do projeto
+
+🤝 Contribuições
+Contribuições são bem-vindas! Siga os passos abaixo para contribuir com o projeto:
+
+Faça um fork do repositório.
+Crie uma branch para sua feature ou correção (git checkout -b feature/nova-feature).
+Faça os commits das suas alterações (git commit -m 'Adiciona nova feature').
+Suba sua branch (git push origin feature/nova-feature).
+Abra um Pull Request.
+
+🛡️ Licença
+Este projeto não possui uma licença definida no momento.
+
+📬 Contato
+Se você tiver dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
+Email: jowgomes3@gmail.com
+
